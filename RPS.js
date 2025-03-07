@@ -18,7 +18,7 @@ function getComputerChoice() {
 
 // Function for player/user choice:
 function getHumanChoice() {
-    let human_choice = prompt("Pick Rock, Paper or Scissors")
+    let human_choice = prompt("5 rounds will be played! Pick Rock, Paper or Scissors!");
     human_choice = human_choice.toLowerCase();
     return human_choice;
 }
