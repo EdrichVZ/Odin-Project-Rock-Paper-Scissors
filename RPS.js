@@ -1,4 +1,4 @@
-console.log("Welcome to Rock Paper Scissors!")
+console.log("Welcome to Rock Paper Scissors!");
 
 // Creating function for random computer choice with Math.random and if statements.
 function getComputerChoice() {
@@ -16,16 +16,12 @@ function getComputerChoice() {
     }
 }
 
-//console.log(getComputerChoice())
-
 // Function for player/user choice:
 function getHumanChoice() {
     let human_choice = prompt("Pick Rock, Paper or Scissors")
     human_choice = human_choice.toLowerCase();
-    return human_choice
+    return human_choice;
 }
-
-//console.log(getHumanChoice())
 
 // Function for one round of the game:
 function playRound(humanChoice, computerChoice) {
@@ -56,12 +52,10 @@ function playRound(humanChoice, computerChoice) {
     }
 }
 
-//playRound(getHumanChoice(), getComputerChoice())
-
 // Function for 5 rounds of play with score tracking:
 function playGame(){
-    let humanscore = 0
-    let computerscore = 0
+    let humanscore = 0;
+    let computerscore = 0;
     for (let r = 0; r < 5; r++) {
         winner = playRound(getHumanChoice(), getComputerChoice())
         if (winner === "H") {
@@ -87,3 +81,6 @@ function playGame(){
         console.log("It's a Draw!"); 
     }
 }
+
+playGame();
+console.log("Thanks for playing!");
