@@ -16,7 +16,7 @@ function getComputerChoice() {
     }
 }
 
-console.log(getComputerChoice())
+//console.log(getComputerChoice())
 
 // Function for player/user choice:
 function getHumanChoice() {
@@ -25,4 +25,29 @@ function getHumanChoice() {
     return human_choice
 }
 
-console.log(getHumanChoice())
+//console.log(getHumanChoice())
+
+// Function for one round of the game:
+function playRound(humanChoice, computerChoice) {
+    if (humanChoice === "rock" && computerChoice === "rock"){
+        return "Rock vs Rock -> DRAW!";
+    } else if (humanChoice === "paper" && computerChoice === "rock"){
+        return "Paper vs Rock -> YOU WIN!";
+    } else if (humanChoice === "scissors" && computerChoice === "rock"){
+        return "Scissors vs Rock -> COMPUTER WINS!";
+    } else if (humanChoice === "rock" && computerChoice === "paper"){
+        return "Rock vs Paper -> COMPUTER WINS!";
+    } else if (humanChoice === "paper" && computerChoice === "paper"){
+        return "Paper vs Paper -> DRAW!";
+    } else if (humanChoice === "scissors" && computerChoice === "paper"){
+        return "Scissors vs Paper -> YOU WIN!";
+    } else if (humanChoice === "rock" && computerChoice === "scissors"){
+        return "Rock vs Scissors -> YOU WIN!";
+    } else if (humanChoice === "paper" && computerChoice === "scissors"){
+        return "Paper vs Scissors -> COMPUTER WINS!";
+    }else if (humanChoice === "scissors" && computerChoice === "scissors"){
+        return "Scissors vs Scissors -> DRAW!"
+    }
+}
+
+//console.log(playRound(getHumanChoice(), getComputerChoice()))
