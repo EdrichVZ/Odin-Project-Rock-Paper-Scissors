@@ -30,24 +30,32 @@ function getHumanChoice() {
 // Function for one round of the game:
 function playRound(humanChoice, computerChoice) {
     if (humanChoice === "rock" && computerChoice === "rock"){
-        return "Rock vs Rock -> DRAW!";
+        console.log("Rock vs Rock -> DRAW!");
     } else if (humanChoice === "paper" && computerChoice === "rock"){
-        return "Paper vs Rock -> YOU WIN!";
+        console.log("Paper vs Rock -> YOU WIN!");
+        return "H"
     } else if (humanChoice === "scissors" && computerChoice === "rock"){
-        return "Scissors vs Rock -> COMPUTER WINS!";
+        console.log("Scissors vs Rock -> COMPUTER WINS!");
+        return "C"
     } else if (humanChoice === "rock" && computerChoice === "paper"){
-        return "Rock vs Paper -> COMPUTER WINS!";
+        console.log("Rock vs Paper -> COMPUTER WINS!");
+        return "C"
     } else if (humanChoice === "paper" && computerChoice === "paper"){
-        return "Paper vs Paper -> DRAW!";
+        console.log("Paper vs Paper -> DRAW!");
     } else if (humanChoice === "scissors" && computerChoice === "paper"){
-        return "Scissors vs Paper -> YOU WIN!";
+        console.log("Scissors vs Paper -> YOU WIN!");
+        return "H"
     } else if (humanChoice === "rock" && computerChoice === "scissors"){
-        return "Rock vs Scissors -> YOU WIN!";
+        console.log("Rock vs Scissors -> YOU WIN!");
+        return "H"
     } else if (humanChoice === "paper" && computerChoice === "scissors"){
-        return "Paper vs Scissors -> COMPUTER WINS!";
+        console.log("Paper vs Scissors -> COMPUTER WINS!");
+        return "C"
     }else if (humanChoice === "scissors" && computerChoice === "scissors"){
-        return "Scissors vs Scissors -> DRAW!"
+        console.log("Scissors vs Scissors -> DRAW!");
     }
 }
 
-//console.log(playRound(getHumanChoice(), getComputerChoice()))
+//playRound(getHumanChoice(), getComputerChoice())
+
+// Function for 5 rounds of play with score tracking:
