@@ -11,20 +11,21 @@ const game = () => {
         const scissorsBtn = document.querySelector('.scissors');
         // Add buttons and computer moves to seperate arrays:
         const playerOptions = [rockBtn, paperBtn, scissorsBtn];
-        const computerOptions = ['rock', 'paper', 'scissors'];
+        const computerOptions = ['Rock', 'Paper', 'Scissors'];
 
         //Function to start the game:
         playerOptions.forEach(option => {
             option.addEventListener('click', function(){
-
+                
+                // const roundsLeft = document.querySelector('.round');
                 rounds++;
-
+                        
                 // Random computer move logic:
                 const choiceNumber = Math.floor(Math.random()*3);
                 const computerChoice = computerOptions[choiceNumber];
 
                 // Function to check who wins:
-                winner(this.innerText,computerChoice);
+                winner(this.innerText,computerChoice)
 
                 // Function to end game after 5 rounds:
                 if(rounds == 5){
@@ -38,45 +39,41 @@ const game = () => {
     const winner = (player,computer) => {
         const result = document.querySelector('.result');
         const playerScoreBoard = document.querySelector('.pScore');
-        const computerScoreBoard = document.querySelector('cScore');
-        player = player.toLowerCase();
-        computer = computer.toLowerCase();
+        const computerScoreBoard = document.querySelector('.cScore');
+
         // If statement logic:
-        if(player === computer) {
-            result.textContent = player.toUpperCase()+' vs '+computer.toUpperCase()+' = Draw!';
+        if(player === computer){
+            result.textContent = player+' vs '+computer+' = Draw!';
         }
-        else if(player == 'rock') {
-            if(computer == 'paper'){
+        else if(player == 'Rock'){
+            if(computer == 'Paper'){
                 result.textContent = 'Rock vs Paper = Computer Wins!';
-                compterScore++;
+                computerScore++;
                 computerScoreBoard.textContent = computerScore;
-
-            } else{
-                result.textContent = 'Scissor vs Paper = You Win!';
-                playerScore++;
-                playerScore.textContent = playerScore;
-            }
-        }
-        else if(player == 'scissor') {
-            if(computer == 'rock'){
-                result.textContent = 'Scissor vs Rock = Computer Wins!';
-                compterScore++;
-                computerScoreBoard.textContent = computerScore;
-
-            } else{
-                result.textContent = 'Paper vs Rock = You Win!';
+            }else{
+                result.textContent = 'Rock vs Scissors = You Win!';
                 playerScore++;
                 playerScoreBoard.textContent = playerScore;
             }
         }
-        else if(player == 'paper') {
-            if(computer == 'scissors'){
+        else if(player == 'Scissors'){
+            if(computer == 'Rock'){
+                result.textContent = 'Scissors vs Rock = Computer Wins!';
+                computerScore++;
+                computerScoreBoard.textContent = computerScore;
+            }else{
+                result.textContent = 'Scissors vs Paper = You Win!';
+                playerScore++;
+                playerScoreBoard.textContent = playerScore;
+            }
+        }
+        else if(player == 'Paper'){
+            if(computer == 'Scissors'){
                 result.textContent = 'Paper vs Scissors = Computer Wins!';
-                compterScore++;
-                computerScoreBoard.textContent = comupterScore;
-
-            } else{
-                result.textContent = 'Rock vs Scissors = You Win!';
+                computerScore++;
+                computerScoreBoard.textContent = computerScore;
+            }else{
+                result.textContent = 'Paper vs Rock = You Win!';
                 playerScore++;
                 playerScoreBoard.textContent = playerScore;
             }
