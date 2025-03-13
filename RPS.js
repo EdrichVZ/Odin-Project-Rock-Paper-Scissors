@@ -11,5 +11,15 @@ const game = () => {
         // Add buttons and computer moves to seperate arrays:
         const playerOptions = [rockBtn, paperBtn, scissorsBtn];
         const computerOptions = ['rock', 'paper', 'scissors'];
+
+        //Function to start the game:
+        playerOptions.forEach(option => {
+            option.addEventListener('click', function(){
+
+                // Random computer move logic:
+                const choiceNumber = Math.floor(Math.random()*3);
+                const computerChoice = computerOptions[choiceNumber];
+            })
+        })
     }
 }
