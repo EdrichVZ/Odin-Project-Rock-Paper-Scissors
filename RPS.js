@@ -2,6 +2,7 @@
 const game = () => {
     let playerScore = 0;
     let compterScore = 0;
+    let rounds = 5;
     
     //Function to play the game:
     const playGame = () => {
@@ -16,9 +17,19 @@ const game = () => {
         playerOptions.forEach(option => {
             option.addEventListener('click', function(){
 
+                rounds++;
+
                 // Random computer move logic:
                 const choiceNumber = Math.floor(Math.random()*3);
                 const computerChoice = computerOptions[choiceNumber];
+
+                // Function to check who wins:
+                winner(this.innerText,computerChoice);
+
+                // Function to end game after 5 rounds:
+                if(rounds == 5){
+                    gameOver(playerOptions);
+                }
             })
         })
     }
