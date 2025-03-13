@@ -33,4 +33,53 @@ const game = () => {
             })
         })
     }
+
+    // Game logic winner/loser/tie:
+    const winner = (player,computer) => {
+        const result = document.querySelector('.result');
+        const playerScoreBoard = document.querySelector('.pScore');
+        const computerScoreBoard = document.querySelector('cScore');
+        player = player.toLowerCase();
+        computer = computer.toLowerCase();
+        // If statement logic:
+        if(player === computer) {
+            result.textContent = player.toUpperCase()+' vs '+computer.toUpperCase()+' = Draw!';
+        }
+        else if(player == 'rock') {
+            if(computer == 'paper'){
+                result.textContent = 'Rock vs Paper = Computer Wins!';
+                compterScore++;
+                computerScoreBoard.textContent = compterScore;
+
+            } else{
+                result.textContent = 'Scissor vs Paper = You Win!';
+                playerScore++;
+                playerScore.textContent = playerScore;
+            }
+        }
+        else if(player == 'scissor') {
+            if(computer == 'rock'){
+                result.textContent = 'Scissor vs Rock = Computer Wins!';
+                compterScore++;
+                computerScoreBoard.textContent = compterScore;
+
+            } else{
+                result.textContent = 'Paper vs Rock = You Win!';
+                playerScore++;
+                playerScoreBoard.textContent = playerScore;
+            }
+        }
+        else if(player == 'paper') {
+            if(computer == 'scissors'){
+                result.textContent = 'Paper vs Scissors = Computer Wins!';
+                compterScore++;
+                computerScoreBoard.textContent = compterScore;
+
+            } else{
+                result.textContent = 'Rock vs Scissors = You Win!';
+                playerScore++;
+                playerScoreBoard.textContent = playerScore;
+            }
+        }
+    }
 }
