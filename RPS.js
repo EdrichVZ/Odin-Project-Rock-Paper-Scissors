@@ -28,7 +28,7 @@ const game = () => {
 
                 // Function to end game after 5 rounds:
                 if(rounds == 5){
-                    gameOver(playerOptions);
+                    gameOver(playerOptions, rounds);
                 }
             })
         })
@@ -81,5 +81,35 @@ const game = () => {
                 playerScoreBoard.textContent = playerScore;
             }
         }
+    }
+
+    // Function to end the game:
+    const gameOver = (playerOptions, rounds) => {
+
+        const chooseMove = document.querySelector('.move');
+        const result = document.querySelector('.result');
+        const restartBtn = document.querySelector('.restart');
+
+        playerOptions.forEach(option => {
+            option.style.display ='none';
+        })
+
+        chooseMove.innerText = 'Game Over!';
+
+        // If statement logic for winner of Match:
+        if(playerScore > compterScore){
+            result.innerText = 'You Won the Game!';
+        }
+        else if(playerScore < compterScore){
+            result.innerText = 'You Lost! Computer Wins!';
+        }
+        else{
+            result.innerText = "It's a Draw!";
+        }
+        restartBtn.innerText = 'Restart';
+        restartBtn.style.display = 'flex';
+        restartBtn.addEventListener('click',() => {
+            window.location.reload();
+        })
     }
 }
