@@ -1,8 +1,8 @@
 // Complete logic will be in this function:
 const game = () => {
     let playerScore = 0;
-    let compterScore = 0;
-    let rounds = 5;
+    let computerScore = 0;
+    let rounds = 0;
     
     //Function to play the game:
     const playGame = () => {
@@ -49,7 +49,7 @@ const game = () => {
             if(computer == 'paper'){
                 result.textContent = 'Rock vs Paper = Computer Wins!';
                 compterScore++;
-                computerScoreBoard.textContent = compterScore;
+                computerScoreBoard.textContent = computerScore;
 
             } else{
                 result.textContent = 'Scissor vs Paper = You Win!';
@@ -61,7 +61,7 @@ const game = () => {
             if(computer == 'rock'){
                 result.textContent = 'Scissor vs Rock = Computer Wins!';
                 compterScore++;
-                computerScoreBoard.textContent = compterScore;
+                computerScoreBoard.textContent = computerScore;
 
             } else{
                 result.textContent = 'Paper vs Rock = You Win!';
@@ -73,7 +73,7 @@ const game = () => {
             if(computer == 'scissors'){
                 result.textContent = 'Paper vs Scissors = Computer Wins!';
                 compterScore++;
-                computerScoreBoard.textContent = compterScore;
+                computerScoreBoard.textContent = comupterScore;
 
             } else{
                 result.textContent = 'Rock vs Scissors = You Win!';
@@ -97,10 +97,10 @@ const game = () => {
         chooseMove.innerText = 'Game Over!';
 
         // If statement logic for winner of Match:
-        if(playerScore > compterScore){
+        if(playerScore > computerScore){
             result.innerText = 'You Won the Game!';
         }
-        else if(playerScore < compterScore){
+        else if(playerScore < computerScore){
             result.innerText = 'You Lost! Computer Wins!';
         }
         else{
@@ -112,4 +112,10 @@ const game = () => {
             window.location.reload();
         })
     }
+
+    // Calling playGame function:
+    playGame();
 }
+
+// Calling game function:
+game();
