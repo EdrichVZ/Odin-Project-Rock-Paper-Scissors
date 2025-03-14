@@ -1,4 +1,4 @@
-body {
+body, .game {
     display: flex;
     flex-direction: column;
     justify-content: space-around;
@@ -6,4 +6,14 @@ body {
     text-align: center;
     font-family: 'Roboto', sans-serif;
 }
+
+.options {
+    padding-top: 20px;
+}
+
+.result {
+    padding-bottom: 20px;
+}
+
+
 
