@@ -1,6 +1,6 @@
 # Odin-Project-Rock-Paper-Scissors
 Create a Rock Paper Scissors game that a user plays against the computer
-This game wil be played entirely via the console.
 Create functions for the logic of the game
-Make user input case insensitive.
-Assume the user always enters the correct input, no need to handle reprompting because of invalid input.
+Make buttons the user can use for input moves
+make it so only 5 rounds are played, score is kept and a winner is annouched after each round and the final winner
+declared after the 5 rounds.
