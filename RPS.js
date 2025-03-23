@@ -11,7 +11,7 @@ const game = () => {
         const scissorsBtn = document.querySelector('.scissors');
         // Add buttons and computer moves to seperate arrays:
         const playerOptions = [rockBtn, paperBtn, scissorsBtn];
-        const computerOptions = ['Rock', 'Paper', 'Scissors'];
+        const computerOptions = ['👊🏽', '✋🏽', '✌🏽'];
 
         //Function to start the game:
         playerOptions.forEach(option => {
@@ -45,35 +45,35 @@ const game = () => {
         if(player === computer){
             result.textContent = player+' vs '+computer+' = Draw!';
         }
-        else if(player == 'Rock'){
-            if(computer == 'Paper'){
-                result.textContent = 'Rock vs Paper = Computer Wins!';
+        else if(player == '👊🏽'){
+            if(computer == '✋🏽'){
+                result.textContent = '👊🏽 vs ✋🏽 = Computer Wins!';
                 computerScore++;
                 computerScoreBoard.textContent = computerScore;
             }else{
-                result.textContent = 'Rock vs Scissors = You Win!';
+                result.textContent = '👊🏽 vs ✌🏽 = You Win!';
                 playerScore++;
                 playerScoreBoard.textContent = playerScore;
             }
         }
-        else if(player == 'Scissors'){
-            if(computer == 'Rock'){
-                result.textContent = 'Scissors vs Rock = Computer Wins!';
+        else if(player == '✌🏽'){
+            if(computer == '👊🏽'){
+                result.textContent = '✌🏽 vs 👊🏽 = Computer Wins!';
                 computerScore++;
                 computerScoreBoard.textContent = computerScore;
             }else{
-                result.textContent = 'Scissors vs Paper = You Win!';
+                result.textContent = '✌🏽 vs ✋🏽 = You Win!';
                 playerScore++;
                 playerScoreBoard.textContent = playerScore;
             }
         }
-        else if(player == 'Paper'){
-            if(computer == 'Scissors'){
-                result.textContent = 'Paper vs Scissors = Computer Wins!';
+        else if(player == '✋🏽'){
+            if(computer == '✌🏽'){
+                result.textContent = '✋🏽 vs ✌🏽 = Computer Wins!';
                 computerScore++;
                 computerScoreBoard.textContent = computerScore;
             }else{
-                result.textContent = 'Paper vs Rock = You Win!';
+                result.textContent = '✋🏽 vs 👊🏽 = You Win!';
                 playerScore++;
                 playerScoreBoard.textContent = playerScore;
             }
